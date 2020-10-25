@@ -6,9 +6,11 @@ import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import com.springbatch.migracaodados.dominio.DadosBancarios;
 
+@Configuration
 public class MigrarDadosBancariosStepConfig {
 	
 	@Autowired
@@ -21,7 +23,7 @@ public class MigrarDadosBancariosStepConfig {
 			) {
 		return stepBuilderFactory
 				.get("migrarDadosBancariosStep")
-				.<DadosBancarios, DadosBancarios> chunk(1)
+				.<DadosBancarios, DadosBancarios> chunk(10000)
 				.reader(arquivoDadosBancariosReader)
 				.writer(bancoDadosBancariosWriter)
 				.build();				

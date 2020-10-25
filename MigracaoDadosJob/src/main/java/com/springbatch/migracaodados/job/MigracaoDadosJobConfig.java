@@ -18,11 +18,11 @@ public class MigracaoDadosJobConfig {
 	private JobBuilderFactory jobBuilderFactory;
 	
 	@Bean
-	public Job migracaoDadosjob(
+	public Job migracaoDadosJob(
 			@Qualifier("migrarPessoasStep") Step migrarPessoasStep,
 			@Qualifier("migrarDadosBancariosStep") Step migrarDadosBancariosStep) {
 		return jobBuilderFactory
-				.get("migracaoDadosjob")
+				.get("migracaoDadosJob")
 				.start(migrarPessoasStep)
 				.next(migrarDadosBancariosStep)
 				.incrementer(new RunIdIncrementer())

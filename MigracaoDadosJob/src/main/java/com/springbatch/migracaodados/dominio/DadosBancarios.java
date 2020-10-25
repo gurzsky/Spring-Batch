@@ -8,7 +8,7 @@ import lombok.Setter;
 public class DadosBancarios {
 	
 	private int id;
-	private int pessoaI;
+	private int pessoaId;
 	private int agencia;
 	private int conta;
 	private int banco;
