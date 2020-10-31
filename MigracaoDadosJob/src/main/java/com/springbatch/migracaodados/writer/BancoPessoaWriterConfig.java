@@ -1,4 +1,4 @@
-package com.springbatch.migracaodados.writer;
+ package com.springbatch.migracaodados.writer;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
