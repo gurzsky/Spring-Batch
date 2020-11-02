@@ -5,11 +5,13 @@ import javax.xml.bind.ValidationException;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import com.springbatch.faturacartaocredito.dominio.Cliente;
 import com.springbatch.faturacartaocredito.dominio.FaturaCartaoCredito;
 
+@Component
 public class CarregarDadosClienteProcessor implements ItemProcessor<FaturaCartaoCredito, FaturaCartaoCredito>{
 	
 	private RestTemplate restTemplate = new RestTemplate();

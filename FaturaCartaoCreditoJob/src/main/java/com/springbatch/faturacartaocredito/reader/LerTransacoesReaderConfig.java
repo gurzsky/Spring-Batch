@@ -48,7 +48,7 @@ public class LerTransacoesReaderConfig {
 				transacao.setCartaoCredito(cartaoCredito);
 				transacao.setData(rs.getDate("data"));
 				transacao.setValor(rs.getDouble("valor"));
-				transacao.setDescricao(rs.getString("desacricao"));
+				transacao.setDescricao(rs.getString("descricao"));
 				
 				return transacao;
 			}
