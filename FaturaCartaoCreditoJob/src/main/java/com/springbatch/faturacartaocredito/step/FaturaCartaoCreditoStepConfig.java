@@ -24,7 +24,7 @@ public class FaturaCartaoCreditoStepConfig {
 	public Step faturaCartaoCreditoStep(
 			ItemStreamReader<Transacao> lerTransacoesReader,
 			ItemProcessor<FaturaCartaoCredito, FaturaCartaoCredito> carregarDadosClienteProcessor,
-			ItemWriter<FaturaCartaoCredito> escerverFaturaCartaoCredito,
+			ItemWriter<FaturaCartaoCredito> escreverFaturaCartaoCredito,
 			TotalTransacoesFooterCallback listener) {
 		
 		return stepBuilderFactory
@@ -32,7 +32,7 @@ public class FaturaCartaoCreditoStepConfig {
 				.<FaturaCartaoCredito, FaturaCartaoCredito>chunk(1)
 				.reader(new FaturaCartaoCreditoReader(lerTransacoesReader))
 				.processor(carregarDadosClienteProcessor)
-				.writer(escerverFaturaCartaoCredito)
+				.writer(escreverFaturaCartaoCredito)
 				.listener(listener)
 				.build();
 	}

@@ -53,7 +53,7 @@ public class FaturaCartaoCreditoReader implements ItemStreamReader<FaturaCartaoC
 			}
 		}
 		
-		return null;
+		return faturaCartaoCredito;
 	}
 
 	private boolean isTransacaoRelacionada(Transacao transacao) throws Exception {

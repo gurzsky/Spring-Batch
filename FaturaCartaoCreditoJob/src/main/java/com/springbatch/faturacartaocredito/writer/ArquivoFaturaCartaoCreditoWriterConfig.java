@@ -76,7 +76,7 @@ public class ArquivoFaturaCartaoCreditoWriterConfig {
 				
 				for (Transacao transacao : faturaCartaoCredito.getTransacoes()) {
 					writer.append(
-							String.format("\n[%10s] %-80s - $",
+							String.format("\n[%10s] %-80s - %s",
 							new SimpleDateFormat("dd/MM/yyyy").format(transacao.getData()),
 							transacao.getDescricao(),
 							NumberFormat.getCurrencyInstance().format(transacao.getValor())));							
