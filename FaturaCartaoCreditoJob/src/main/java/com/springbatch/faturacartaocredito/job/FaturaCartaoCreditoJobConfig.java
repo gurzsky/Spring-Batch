@@ -20,7 +20,7 @@ public class FaturaCartaoCreditoJobConfig {
 	public Job faturaCartaoCreditoJob(Step faturaCartaoCreditoStep) {
 		
 		return jobBuilderFactory
-				.get("faturaCartaoCreditoStep")
+				.get("faturaCartaoCreditoJob")
 				.start(faturaCartaoCreditoStep)
 				.incrementer(new RunIdIncrementer())
 				.build();
